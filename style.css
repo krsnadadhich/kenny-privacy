@@ -2,14 +2,10 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:
 h1{font-size:1.8rem;margin-bottom:.25rem}h2{font-size:1.2rem;margin-top:2rem}
 .meta{color:#666;font-size:.9rem}a{color:#0b61c4}li{margin:.3rem 0}
 @media(prefers-color-scheme:dark){body{background:#121212;color:#e6e6e6}.meta{color:#999}a{color:#6ab0ff}}
-body{position:relative}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:#1a1a1a;opacity:.05;-webkit-mask:url(kenny-logo.png) center/min(70vmin,520px) no-repeat;mask:url(kenny-logo.png) center/min(70vmin,520px) no-repeat}
-@media(prefers-color-scheme:dark){body::before{background:#f3f0e8;opacity:.07}}
 .brand{display:flex;align-items:center;gap:.75rem;padding-bottom:1rem;border-bottom:1px solid rgba(128,128,128,.25);margin-bottom:1.5rem;flex-wrap:wrap}
 .brand a.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
-.brand img{width:36px;height:auto;filter:invert(.85)}
-.brand .word{font-weight:800;letter-spacing:.2em;font-size:1.3rem}
-.brand .tag{color:#666;font-size:.85rem;flex-basis:100%}
+.brand img{width:24px;height:auto;filter:invert(.85)}
+.brand .word{font-weight:800;letter-spacing:.15em;font-size:1.1rem}
 .brand nav{margin-left:auto;display:flex;gap:1rem;font-size:.9rem}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid rgba(128,128,128,.25);color:#666;font-size:.85rem}
 form{display:grid;gap:1rem;margin-top:1.5rem}
@@ -17,4 +13,7 @@ label{display:grid;gap:.3rem;font-weight:600;font-size:.95rem}
 input,select,textarea,button{font:inherit;padding:.6rem .75rem;border:1px solid rgba(128,128,128,.5);border-radius:6px;background:transparent;color:inherit}
 button{background:#1a1a1a;color:#f3f0e8;font-weight:700;cursor:pointer;border-color:#1a1a1a}
 .notice{border:1px solid rgba(128,128,128,.4);border-radius:6px;padding:.75rem 1rem;font-size:.92rem}
-@media(prefers-color-scheme:dark){.brand img{filter:none}.brand .tag,footer{color:#999}button{background:#f3f0e8;color:#121212}select option{background:#121212}}
+@media(prefers-color-scheme:dark){.brand img{filter:none}footer{color:#999}button{background:#f3f0e8;color:#121212}select option{background:#121212}}
+main{position:relative;isolation:isolate;min-height:14rem}
+main::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:50%;top:max(1rem,min(30%,12rem));width:min(60%,260px);aspect-ratio:1024/960;transform:translateX(-50%);background:#1a1a1a;opacity:.05;-webkit-mask:url(kenny-logo.png) center/contain no-repeat;mask:url(kenny-logo.png) center/contain no-repeat}
+@media(prefers-color-scheme:dark){main::before{background:#f3f0e8;opacity:.06}}
