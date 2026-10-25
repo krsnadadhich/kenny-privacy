@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Report an Issue - Kenny</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="kenny-logo.png">
+</head>
+<body>
+<header class="brand"><a class="logo" href="index.html"><img src="kenny-logo.png" alt=""><span class="word">KENNY</span></a><nav><a href="index.html">Privacy</a><a href="data-deletion.html">Data deletion</a><a href="report.html">Report an issue</a></nav><span class="tag">Chat has power, but the AI has agency.</span></header>
+<h1>Report an issue</h1>
+<p class="meta">Reaches Kenny's developer, a real person.</p>
+
+<p class="notice"><strong>Heads up:</strong> this opens a new issue on the public <a href="https://github.com/krsnadadhich/kenny-privacy/issues">kenny-privacy</a> GitHub page. You need a free GitHub account, and anyone can read what you post, so do not include private details. For a data-deletion request, your Instagram username is enough, or DM <strong>@kennies.ai</strong> instead.</p>
+
+<form id="f">
+<label>Your name<input name="name" required maxlength="80"></label>
+<label>Instagram username<input name="username" required maxlength="40" placeholder="@yourname"></label>
+<label>What is this about?
+<select name="type" required>
+<option value="" disabled selected>Choose one</option>
+<option>Delete my data</option>
+<option>Kenny said something harmful or wrong</option>
+<option>Privacy question</option>
+<option>Kenny is not replying / bug</option>
+<option>Other</option>
+</select></label>
+<label>Details<textarea name="details" rows="6" required maxlength="1500"></textarea></label>
+<button type="submit">Continue to GitHub</button>
+</form>
+<script>
+document.getElementById("f").addEventListener("submit",function(e){
+e.preventDefault();
+var d=new FormData(e.target),q=new URLSearchParams({template:"issue.yml",title:"[Issue] "+d.get("type")+" - "+d.get("username")});
+["name","username","type","details"].forEach(function(k){q.set(k,d.get(k))});
+location.href="https://github.com/krsnadadhich/kenny-privacy/issues/new?"+q.toString();
+});
+</script>
+<footer>KENNY &middot; AI character on Instagram <strong>@kennies.ai</strong> &middot; built by an individual developer</footer>
+</body>
+</html>

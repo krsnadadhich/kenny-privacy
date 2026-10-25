@@ -1,0 +1,38 @@
+name: Report an issue
+description: Tell Kenny's developer about a problem or request
+title: "[Issue] "
+body:
+  - type: markdown
+    attributes:
+      value: "This issue is public. Do not post private information."
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+    validations:
+      required: true
+  - type: input
+    id: username
+    attributes:
+      label: Instagram username
+      placeholder: "@yourname"
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: What is this about?
+      options:
+        - Delete my data
+        - Kenny said something harmful or wrong
+        - Privacy question
+        - Kenny is not replying / bug
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+    validations:
+      required: true
